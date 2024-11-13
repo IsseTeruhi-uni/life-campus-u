@@ -2,11 +2,11 @@ services:
   app:
     build:
       context: .
-    ports:
-      - "3001:3001"
+    tty: true
     volumes:
-      - .:/app
-      - node_modules:/app/node_modules
+      - ./src:/app
+    environment:
+      - WATCHPACK_POLLING=true
     command: sh -c "npm run dev"
-volumes:
-  node_modules:
+    ports:
+      - "3001:3000"
