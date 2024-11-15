@@ -12,25 +12,19 @@ import {
 	Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconCalendar, IconGraph, IconHome } from "@tabler/icons-react";
+import {IconHome } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useUserSession } from '../hooks/use-user-session';
-import { signOutWithGoogle } from "@/libs/firebase/auth";
-import { removeSession } from "@/actions/auth-actions";
 interface Props {
 	children: ReactNode;
 	session: string | null;
 }
 export default function RootLayout({ children, session }: Props) {
-	const userSessionId = useUserSession(session);
+	const { isAuthenticated } = useUserSession(session);
 	const pathname = usePathname();
 	const [opened, { toggle }] = useDisclosure();
-	const handleSignOut = async () => {
-		await signOutWithGoogle();
-		await removeSession();
-	};
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
@@ -70,9 +64,8 @@ export default function RootLayout({ children, session }: Props) {
 										</Text>
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' ,flex:1}}>
-										{userSessionId && (
-											// <Avatar radius="xl" component={Link} href="/user" />
-											< Avatar radius="xl" onClick={handleSignOut} />
+										{isAuthenticated && (
+											<Avatar radius="xl" component={Link} href="/user" />
 										)}
 									</div>
 

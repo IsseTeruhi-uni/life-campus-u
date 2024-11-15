@@ -11,14 +11,18 @@
 		"check": "biome check --write ."
 	},
 	"dependencies": {
+		"@mantine/carousel": "^7.14.0",
 		"@mantine/core": "^7.14.0",
 		"@mantine/form": "^7.14.0",
 		"@mantine/hooks": "^7.14.0",
 		"@tabler/icons-react": "^3.22.0",
 		"@types/firebase": "^2.4.32",
+		"axios": "^1.7.7",
+		"chart.js": "^4.4.6",
 		"firebase": "^11.0.1",
 		"next": "14.2.17",
 		"react": "^18",
+		"react-chartjs-2": "^5.2.0",
 		"react-dom": "^18"
 	},
 	"devDependencies": {
