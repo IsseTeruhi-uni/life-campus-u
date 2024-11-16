@@ -3,7 +3,7 @@ const sampleSemiCircleGraphConsumedCaloriesData = {
     datasets: [
         {
             label: "1日の消費カロリー(デモデータ)",
-            data: [2500, 0], // 例として、目標消費カロリーが2200kcalで、2500kcal消費した場合、残りは0kcal
+            data: [1600, 900], // 例として、目標消費カロリーが2200kcalで、2500kcal消費した場合、残りは0kcal
             backgroundColor: [
                 "rgba(255, 99, 132, 0.2)", // 赤色
                 "rgba(201, 203, 207, 0.2)", // 灰色
