@@ -16,7 +16,7 @@ import { IconHome,IconBed,IconActivity,IconToolsKitchen2 } from "@tabler/icons-r
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useUserSession } from "../hooks/use-user-session";
+import { useUserSession } from "../context/use-user-session";
 interface Props {
 	children: ReactNode;
 	session: string | null;

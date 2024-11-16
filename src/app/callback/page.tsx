@@ -1,5 +1,5 @@
 "use client";
-import useFitbitSession from "@/hooks/use-fitbit-session";
+import useFitbitSession from "@/context/use-fitbit-session";
 import { getFitbitToken } from "@/libs/fitbit/auth";
 import { useRouter } from "next/navigation"; // App Router用
 import { useSearchParams } from "next/navigation"; // App Router用

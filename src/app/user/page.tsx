@@ -1,6 +1,6 @@
 "use client";
 import { removeSession } from "@/actions/auth-actions";
-import useFitbitSession from "@/hooks/use-fitbit-session";
+import useFitbitSession from "@/context/use-fitbit-session";
 import { signOutWithGoogle } from "@/libs/firebase/auth";
 import { getFitbitAuthUrl } from "@/libs/fitbit/auth";
 import {

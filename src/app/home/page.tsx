@@ -1,5 +1,5 @@
 "use client";
-import PageHeader from "@/feature/PageHeader";
+import PageHeader from "@/component/PageHeader";
 import { Carousel } from "@mantine/carousel";
 import { Button, Card, Paper, type PaperProps } from "@mantine/core";
 import "@mantine/carousel/styles.css";
