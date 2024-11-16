@@ -37,7 +37,7 @@ export default function Sleep(props: PaperProps) {
                     ":hover": { transform: "scale(1.02)" },
                 }}
             >
-            <PageHeader title="AIアシスタント" />
+                <PageHeader title="AIアシスタント" />
                 <AdvicePersonWithMessage message="睡眠時間は概ねよく取れています。睡眠の質と位相が悪いようです。改善しましょう!!" />
             </Paper>
             <Paper
