@@ -26,7 +26,7 @@ export default function RootLayout({ children, session }: Props) {
 	const pathname = usePathname();
 	const [opened, { toggle }] = useDisclosure();
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="ja" suppressHydrationWarning>
 			<head>
 				<ColorSchemeScript />
 			</head>

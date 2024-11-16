@@ -4,13 +4,13 @@ import { Carousel } from "@mantine/carousel";
 import { Button, Card, Paper, type PaperProps } from "@mantine/core";
 import "@mantine/carousel/styles.css";
 import Piegraph from "@/components/DoughnutGraph";
-import { samplePieGraphSleepTimetData } from "@/data/mock/samplePieGraphSleepTime";
+import { samplePieGraphSleepTimetData } from "@/data/mock/SleepTime/samplePieGraphSleepTime";
 import Bargraph from "@/components/BarGraph";
-import { sampleBargraphSleepStageData } from "@/data/mock/sampleBarGraphSleepStage";
+import { sampleBargraphSleepStageData } from "@/data/mock/SleepStage/sampleBarGraphSleepStage";
 import RadarGraph from "@/components/RadarGraph";
 import sampleRadarGraphSleepScore from "@/data/mock/sampleRadarGraphSleepScore";
 import SemiCircleGraph from "@/components/SemiCircleGraph";
-import { sampleSemiCircleGraphStepsData } from "@/data/mock/sampleSemiCricleGraphSteps";
+import { sampleSemiCircleGraphStepsData } from "@/data/mock/Steps/sampleSemiCricleGraphSteps";
 import { sampleSemiCircleGraphConsumedCaloriesData } from "@/data/mock/sampleSemiCricleGraphConsumedCalories";
 import { sampleRadarGraphNutrientsData } from "@/data/mock/sampleRadarGraphNutrients";
 import AdvicePersonWithMessage from "@/components/AdvicePersonWithMessage";
@@ -75,7 +75,7 @@ export default function Home(props: PaperProps) {
 						</Card>
 					</Carousel.Slide>
 				</Carousel>
-				<Button variant="outline" color="green" fullWidth mt="md">
+				<Button variant="outline" color="green" fullWidth mt="md" >
 					睡眠アンケートに回答する
 				</Button>
 				<Button variant="outline" color="blue" fullWidth mt="md" onClick={() => router.push('/sleep')}>
@@ -122,7 +122,7 @@ export default function Home(props: PaperProps) {
 						</Card>
 					</Carousel.Slide> */}
 				</Carousel>
-				<Button variant="outline" color="blue" fullWidth mt="md">
+				<Button variant="outline" color="blue" fullWidth mt="md" onClick={() => router.push('/activity')}>
 					詳細を確認する
 				</Button>
 			</Paper>
@@ -168,7 +168,7 @@ export default function Home(props: PaperProps) {
 				<Button variant="outline" color="green" fullWidth mt="md">
 					食事を記録する
 				</Button>
-				<Button variant="outline" color="blue" fullWidth mt="md">
+				<Button variant="outline" color="blue" fullWidth mt="md" onClick={() => router.push('/meal')}>
 					詳細を確認する
 				</Button>
 			</Paper>
