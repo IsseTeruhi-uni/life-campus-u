@@ -2,12 +2,12 @@
 import AdvicePersonWithMessage from "@/components/AdvicePersonWithMessage";
 import Bargraph from "@/components/BarGraph";
 import PageHeader from "@/components/PageHeader";
-import sampleBarGraphMonthSleepScore from "@/data/mock/sampleBarGraphMonthSleepScore";
-import sampleBarGraphMonthSleepTime from "@/data/mock/sampleBarGraphMonthSleepTime";
-import sampleBarGraphWeekSleepScore from "@/data/mock/sampleBarGraphWeekSleepScore";
-import sampleBarGraphWeekSleepTime from "@/data/mock/sampleBarGraphWeekSleepTime";
-import sampleBarGraphYearSleepTime from "@/data/mock/sampleBarGraphYear";
-import sampleBarGraphYearSleepScore from "@/data/mock/sampleBarGraphYearSleepScore";
+import sampleBarGraphMonthSleepScore from "@/data/mock/SleepScore/sampleBarGraphMonthSleepScore";
+import sampleBarGraphMonthSleepTime from "@/data/mock/SleepTime/sampleBarGraphMonthSleepTime";
+import sampleBarGraphWeekSleepScore from "@/data/mock/SleepScore/sampleBarGraphWeekSleepScore";
+import sampleBarGraphWeekSleepTime from "@/data/mock/SleepTime/sampleBarGraphWeekSleepTime";
+import sampleBarGraphYearSleepTime from "@/data/mock/SleepTime/sampleBarGraphYearSleepTime";
+import sampleBarGraphYearSleepScore from "@/data/mock/SleepScore/sampleBarGraphYearSleepScore";
 import { Button, Card, Paper, Tabs, type PaperProps, Text } from "@mantine/core";
 import { useState } from "react";
 
@@ -37,7 +37,7 @@ export default function Sleep(props: PaperProps) {
                     ":hover": { transform: "scale(1.02)" },
                 }}
             >
-            <PageHeader title="AIアシスタント" />
+                <PageHeader title="AIアシスタント" />
                 <AdvicePersonWithMessage message="睡眠時間は概ねよく取れています。睡眠の質と位相が悪いようです。改善しましょう!!" />
             </Paper>
             <Paper
