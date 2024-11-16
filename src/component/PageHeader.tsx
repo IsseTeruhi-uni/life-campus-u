@@ -71,7 +71,7 @@ const PageHeader = (props: PageHeaderProps) => {
 						gap={{ base: "sm", sm: 4 }}
 					>
 						<Stack gap={4}>
-							<Title order={3}>{title}</Title>
+							<Title order={4}>{title}</Title>
 							<Text>{subtitle}</Text>
 						</Stack>
 						<Flex align="center" gap="sm">
@@ -88,7 +88,7 @@ const PageHeader = (props: PageHeaderProps) => {
 						gap={{ base: "sm", sm: 4 }}
 					>
 						<Stack>
-							<Title order={3}>{title}</Title>
+							<Title order={4}>{title}</Title>
 							<Breadcrumbs {...BREADCRUMBS_PROPS}>
 								{breadcrumbItems}
 							</Breadcrumbs>
@@ -97,7 +97,7 @@ const PageHeader = (props: PageHeaderProps) => {
 					</Flex>
 				) : (
 					<Stack gap="sm">
-						<Title order={3}>{title}</Title>
+						<Title order={4}>{title}</Title>
 						<Breadcrumbs {...BREADCRUMBS_PROPS}>{breadcrumbItems}</Breadcrumbs>
 					</Stack>
 				)}

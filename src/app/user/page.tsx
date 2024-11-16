@@ -10,7 +10,7 @@ import {
 	NumberInput,
 	Select,
 	TextInput,
-	Title,
+	Text,
 } from "@mantine/core";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ export default function UserProfile() {
 
 	return (
 		<Container>
-			<Title order={2}>プロフィール編集</Title>
+			<Text fz="xl">プロフィール編集</Text>
 			<TextInput
 				label="氏名"
 				placeholder="氏名を入力"
@@ -62,11 +62,12 @@ export default function UserProfile() {
 				プロフィール保存
 			</Button>
 
-			<Divider my="lg" />
+			
 
 			{!isFitbitAuthenticated && (
 				<>
-					<Title order={2}>Fitbit 連携</Title>
+					<Divider my="lg" />
+					<Text fz="xl">Fitbit 連携</Text>
 					<Button
 						fullWidth
 						mt="md"
@@ -81,7 +82,7 @@ export default function UserProfile() {
 				</>
 			)}
 			<Divider my="lg" />
-			<Title order={2}>アカウント設定</Title>
+			<Text fz="xl">アカウント設定</Text>
 			<Button
 				fullWidth
 				mt="md"
