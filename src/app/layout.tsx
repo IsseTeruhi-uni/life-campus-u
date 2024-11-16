@@ -12,7 +12,7 @@ import {
 	Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconHome } from "@tabler/icons-react";
+import { IconHome,IconBed,IconActivity,IconToolsKitchen2 } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -125,53 +125,69 @@ export default function RootLayout({ children, session }: Props) {
 								component={Link}
 								href="/"
 							/>
-							{/* <NavLink
+							<NavLink
 								label={
 									<div style={{ display: "flex", alignItems: "center" }}>
-										<IconCalendar
-											style={
-												pathname === "/user/reservation"
-													? { color: "blue" }
-													: {}
-											}
+										<IconBed
+											style={pathname === "/sleep" ? { color: "blue" } : {}}
 											size="1rem"
 											stroke={1.5}
 										/>
 										<Text
 											style={{
 												marginLeft: "0.5rem",
-												color:
-													pathname === "/user/reservation" ? "blue" : "inherit",
+												color: pathname === "/sleep" ? "blue" : "inherit",
 											}}
 										>
-											施設予約
+											睡眠詳細
 										</Text>
 									</div>
 								}
 								component={Link}
-								href="/user/reservation"
+								href="/sleep"
 							/>
 							<NavLink
 								label={
 									<div style={{ display: "flex", alignItems: "center" }}>
-										<IconGraph
-											style={pathname === "/user/qr" ? { color: "blue" } : {}}
+										<IconActivity
+											style={pathname === "/activity" ? { color: "blue" } : {}}
 											size="1rem"
 											stroke={1.5}
 										/>
 										<Text
 											style={{
 												marginLeft: "0.5rem",
-												color: pathname === "/user/qr" ? "blue" : "inherit",
+												color: pathname === "/activity" ? "blue" : "inherit",
 											}}
 										>
-											会員証表示
+											運動詳細
 										</Text>
 									</div>
 								}
 								component={Link}
-								href="/user/qr"
-							/> */}
+								href="/activity"
+							/>
+							<NavLink
+								label={
+									<div style={{ display: "flex", alignItems: "center" }}>
+										<IconToolsKitchen2
+											style={pathname === "/meal" ? { color: "blue" } : {}}
+											size="1rem"
+											stroke={1.5}
+										/>
+										<Text
+											style={{
+												marginLeft: "0.5rem",
+												color: pathname === "/meal" ? "blue" : "inherit",
+											}}
+										>
+											食事詳細
+										</Text>
+									</div>
+								}
+								component={Link}
+								href="/meal"
+							/>
 						</AppShell.Navbar>
 
 						<AppShell.Main>{children}</AppShell.Main>

@@ -15,6 +15,7 @@
 		"@mantine/core": "^7.14.0",
 		"@mantine/form": "^7.14.0",
 		"@mantine/hooks": "^7.14.0",
+		"@sgratzl/chartjs-chart-boxplot": "^4.4.3",
 		"@tabler/icons-react": "^3.22.0",
 		"@types/firebase": "^2.4.32",
 		"axios": "^1.7.7",

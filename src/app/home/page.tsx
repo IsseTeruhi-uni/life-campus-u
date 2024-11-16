@@ -1,7 +1,7 @@
 "use client";
 import PageHeader from "@/feature/PageHeader";
 import { Carousel } from "@mantine/carousel";
-import { Card, Paper, type PaperProps } from "@mantine/core";
+import { Button, Card, Paper, type PaperProps } from "@mantine/core";
 import "@mantine/carousel/styles.css";
 
 export default function Home(props: PaperProps) {
@@ -44,7 +44,13 @@ export default function Home(props: PaperProps) {
 							3
 						</Card>
 					</Carousel.Slide>
-				</Carousel>
+                </Carousel>
+                <Button variant="outline" color="green" fullWidth mt="md">
+                    睡眠アンケートに回答する
+                </Button>
+                <Button variant="outline" color="blue" fullWidth mt="md">
+                    詳細を確認する
+                </Button>
 			</Paper>
 			<Paper
 				radius="md"
@@ -83,7 +89,10 @@ export default function Home(props: PaperProps) {
 							3
 						</Card>
 					</Carousel.Slide>
-				</Carousel>
+                </Carousel>
+                <Button variant="outline" color="blue" fullWidth mt="md">
+                    詳細を確認する
+                </Button>
 			</Paper>
 			<Paper
 				radius="md"
@@ -122,7 +131,13 @@ export default function Home(props: PaperProps) {
 							3
 						</Card>
 					</Carousel.Slide>
-				</Carousel>
+                </Carousel>
+                <Button variant="outline" color="green" fullWidth mt="md">
+                    食事を記録する
+                </Button>
+                <Button variant="outline" color="blue" fullWidth mt="md">
+                    詳細を確認する
+                </Button>
 			</Paper>
 		</>
 	);
