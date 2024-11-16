@@ -12,25 +12,19 @@ import {
 	Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconCalendar, IconGraph, IconHome } from "@tabler/icons-react";
+import { IconHome,IconBed,IconActivity,IconToolsKitchen2 } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useUserSession } from '../hooks/use-user-session';
-import { signOutWithGoogle } from "@/libs/firebase/auth";
-import { removeSession } from "@/actions/auth-actions";
+import { useUserSession } from "../context/use-user-session";
 interface Props {
 	children: ReactNode;
 	session: string | null;
 }
 export default function RootLayout({ children, session }: Props) {
-	const userSessionId = useUserSession(session);
+	const { isAuthenticated } = useUserSession(session);
 	const pathname = usePathname();
 	const [opened, { toggle }] = useDisclosure();
-	const handleSignOut = async () => {
-		await signOutWithGoogle();
-		await removeSession();
-	};
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
@@ -48,9 +42,27 @@ export default function RootLayout({ children, session }: Props) {
 						}}
 					>
 						<AppShell.Header>
-							<Group h="100%" px="md" style={{ display: 'flex', width: '100%' }}>
-								<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-									<div style={{ display: 'flex', alignItems: 'center', justifyContent:'flex-start', flex:1}}>
+							<Group
+								h="100%"
+								px="md"
+								style={{ display: "flex", width: "100%" }}
+							>
+								<div
+									style={{
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "space-between",
+										width: "100%",
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "flex-start",
+											flex: 1,
+										}}
+									>
 										<Burger
 											opened={opened}
 											onClick={toggle}
@@ -58,24 +70,35 @@ export default function RootLayout({ children, session }: Props) {
 											size="sm"
 										/>
 									</div>
-									<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "center",
+										}}
+									>
 										<Text
-											style={{ marginLeft: "0.5rem",color: "black" }}
+											style={{ marginLeft: "0.5rem", color: "black" }}
 											fz="xl"
 											fw={700}
 											component={Link}
-											href="/"
+											href="/home"
 										>
 											LifeCampusU
 										</Text>
 									</div>
-									<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' ,flex:1}}>
-										{userSessionId && (
-											// <Avatar radius="xl" component={Link} href="/user" />
-											< Avatar radius="xl" onClick={handleSignOut} />
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "flex-end",
+											flex: 1,
+										}}
+									>
+										{isAuthenticated && (
+											<Avatar radius="xl" component={Link} href="/user" />
 										)}
 									</div>
-
 								</div>
 							</Group>
 						</AppShell.Header>
@@ -85,14 +108,14 @@ export default function RootLayout({ children, session }: Props) {
 								label={
 									<div style={{ display: "flex", alignItems: "center" }}>
 										<IconHome
-											style={pathname === "/user" ? { color: "blue" } : {}}
+											style={pathname === "/home" ? { color: "blue" } : {}}
 											size="1rem"
 											stroke={1.5}
 										/>
 										<Text
 											style={{
 												marginLeft: "0.5rem",
-												color: pathname === "/user" ? "blue" : "inherit",
+												color: pathname === "/home" ? "blue" : "inherit",
 											}}
 										>
 											ホーム
@@ -100,60 +123,74 @@ export default function RootLayout({ children, session }: Props) {
 									</div>
 								}
 								component={Link}
-								href="/"
-							/>
-							{/* <NavLink
-								label={
-									<div style={{ display: "flex", alignItems: "center" }}>
-										<IconCalendar
-											style={
-												pathname === "/user/reservation"
-													? { color: "blue" }
-													: {}
-											}
-											size="1rem"
-											stroke={1.5}
-										/>
-										<Text
-											style={{
-												marginLeft: "0.5rem",
-												color:
-													pathname === "/user/reservation" ? "blue" : "inherit",
-											}}
-										>
-											施設予約
-										</Text>
-									</div>
-								}
-								component={Link}
-								href="/user/reservation"
+								href="/home"
 							/>
 							<NavLink
 								label={
 									<div style={{ display: "flex", alignItems: "center" }}>
-										<IconGraph
-											style={pathname === "/user/qr" ? { color: "blue" } : {}}
+										<IconBed
+											style={pathname === "/sleep" ? { color: "blue" } : {}}
 											size="1rem"
 											stroke={1.5}
 										/>
 										<Text
 											style={{
 												marginLeft: "0.5rem",
-												color: pathname === "/user/qr" ? "blue" : "inherit",
+												color: pathname === "/sleep" ? "blue" : "inherit",
 											}}
 										>
-											会員証表示
+											睡眠詳細
 										</Text>
 									</div>
 								}
 								component={Link}
-								href="/user/qr"
-							/> */}
+								href="/sleep"
+							/>
+							<NavLink
+								label={
+									<div style={{ display: "flex", alignItems: "center" }}>
+										<IconActivity
+											style={pathname === "/activity" ? { color: "blue" } : {}}
+											size="1rem"
+											stroke={1.5}
+										/>
+										<Text
+											style={{
+												marginLeft: "0.5rem",
+												color: pathname === "/activity" ? "blue" : "inherit",
+											}}
+										>
+											運動詳細
+										</Text>
+									</div>
+								}
+								component={Link}
+								href="/activity"
+							/>
+							<NavLink
+								label={
+									<div style={{ display: "flex", alignItems: "center" }}>
+										<IconToolsKitchen2
+											style={pathname === "/meal" ? { color: "blue" } : {}}
+											size="1rem"
+											stroke={1.5}
+										/>
+										<Text
+											style={{
+												marginLeft: "0.5rem",
+												color: pathname === "/meal" ? "blue" : "inherit",
+											}}
+										>
+											食事詳細
+										</Text>
+									</div>
+								}
+								component={Link}
+								href="/meal"
+							/>
 						</AppShell.Navbar>
 
-
 						<AppShell.Main>{children}</AppShell.Main>
-
 					</AppShell>
 				</MantineProvider>
 			</body>
