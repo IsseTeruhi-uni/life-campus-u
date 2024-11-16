@@ -46,6 +46,7 @@ export default function SemiCircleGraph({
         maintainAspectRatio: false,
         circumference: 180, // Half-pie chart
         rotation: -90, // Start from the top
+        cutout: '50%', // Donut chart
     };
 
     return (

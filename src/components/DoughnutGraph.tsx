@@ -9,26 +9,26 @@ import {
     Tooltip,
 } from "chart.js/auto";
 import { useRef } from "react";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(CategoryScale, ArcElement, Title, Tooltip, Legend);
-interface PiegraphProps {
-    graphData: ChartData<"pie">;
+interface DoughnutgraphProps {
+    graphData: ChartData<"doughnut">;
     title: string;
     className: string;
 }
-export default function Piegraph({
+export default function Doughnutgraph({
     graphData,
     title,
     className,
-}: PiegraphProps) {
-    const chartRef = useRef<ChartJS<"pie", number[], string>>(null);
+}: DoughnutgraphProps) {
+    const chartRef = useRef<ChartJS<"doughnut", number[], string>>(null);
 
-    const options: ChartOptions<"pie"> = {
+    const options: ChartOptions<"doughnut"> = {
         responsive: true,
         plugins: {
             legend: {
-                display:false
+                display: false
             },
             title: {
                 display: true,
@@ -39,7 +39,7 @@ export default function Piegraph({
     };
 
     return (
-        <Pie
+        <Doughnut
             className={className}
             ref={chartRef}
             data={graphData}
