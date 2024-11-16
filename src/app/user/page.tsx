@@ -10,7 +10,7 @@ export default function UserProfile() {
     const [name, setName] = useState('');
     const [age, setAge] = useState<number | undefined>(undefined);
     const [gender, setGender] = useState('');
-    const { isFitbitAuthenticated } = useFitbitSession();
+    const { clearSession,isFitbitAuthenticated } = useFitbitSession();
     const handleSignOut = async () => {
         await signOutWithGoogle();
         await removeSession();
@@ -71,8 +71,16 @@ export default function UserProfile() {
                 </>
             )}
             <Divider my="lg" />
-            <Title order={2}>ログアウト</Title>
-
+            <Title order={2}>アカウント設定</Title>
+            <Button
+                fullWidth
+                mt="md"
+                variant="outline"
+                color='red'
+                onClick={clearSession}
+            >
+                Fitbit連携解除
+            </Button>
             <Button
                 fullWidth
                 mt="md"

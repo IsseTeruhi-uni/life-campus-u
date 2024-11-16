@@ -20,6 +20,10 @@ export async function signInWithGoogle() {
         if (!result || !result.user) {
             throw new Error('Google sign in failed');
         }
+
+        const token = (await result.user.getIdTokenResult()).token;
+        localStorage.setItem('authToken', token);
+
         return result.user.uid;
     } catch (error) {
         console.error('Error signing in with Google', error);
@@ -29,6 +33,7 @@ export async function signInWithGoogle() {
 export async function signOutWithGoogle() {
     try {
         await firebaseAuth.signOut();
+        localStorage.removeItem('authToken');
     } catch (error) {
         console.error('Error signing out with Google', error);
     }
