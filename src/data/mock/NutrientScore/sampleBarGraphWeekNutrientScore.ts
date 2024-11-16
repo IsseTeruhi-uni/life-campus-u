@@ -1,10 +1,10 @@
 
-const sampleBarGraphWeekSleepScore = {
+const sampleBarGraphWeekNutrientScore = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 
     datasets: [
         {
-            label: 'Sleep Score (points)',
+            label: 'Nutrient Score (points)',
             data: [
                 1.2, 3.4, 2.1, 4.0, 1.5, 3.6, 2.7
             ],
@@ -15,4 +15,4 @@ const sampleBarGraphWeekSleepScore = {
     ],
 };
 
-export default sampleBarGraphWeekSleepScore;
+export default sampleBarGraphWeekNutrientScore;

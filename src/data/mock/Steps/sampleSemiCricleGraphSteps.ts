@@ -1,4 +1,4 @@
-const sampleSemiCircleGraphStepsData = {
+const sampleSemiCircleGraphSteps = {
     labels: ["歩数", "残り"],
     datasets: [
         {
@@ -17,4 +17,4 @@ const sampleSemiCircleGraphStepsData = {
     ],
 };
 
-export { sampleSemiCircleGraphStepsData };
+export { sampleSemiCircleGraphSteps };

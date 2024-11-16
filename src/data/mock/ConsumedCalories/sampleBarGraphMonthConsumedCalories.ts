@@ -1,4 +1,4 @@
-const sampleBarGraphMonthSteps = {
+const sampleBarGraphMonthConsumedCalories = {
     labels: [
         '1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日',
         '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日',
@@ -6,11 +6,11 @@ const sampleBarGraphMonthSteps = {
     ],
     datasets: [
         {
-            label: 'steps',
+            label: 'Consumed Calories (kcal)',
             data: [
-                7880, 6890, 12900, 7910, 5920, 9930, 8940, 8950, 9960, 8970,
-                5980, 8990, 9000, 8010, 8550, 8030, 8100, 7050, 13060, 4070,
-                9080, 3090, 9100, 12110, 11120, 9130, 20140, 5150, 6160, 8170, 5180
+                1800, 2100, 2300, 2400, 2000, 2500, 2600, 2200, 2100, 2300,
+                2400, 2000, 2500, 2600, 2200, 2100, 2300, 2400, 2000, 2500,
+                2600, 2200, 2100, 2300, 2400, 2000, 2500, 2600, 2200, 2100, 2300
             ],
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
@@ -19,4 +19,4 @@ const sampleBarGraphMonthSteps = {
     ],
 };
 
-export default sampleBarGraphMonthSteps;
+export default sampleBarGraphMonthConsumedCalories;
