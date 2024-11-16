@@ -82,7 +82,7 @@ export default function RootLayout({ children, session }: Props) {
 											fz="xl"
 											fw={700}
 											component={Link}
-											href="/"
+											href="/home"
 										>
 											LifeCampusU
 										</Text>
@@ -108,14 +108,14 @@ export default function RootLayout({ children, session }: Props) {
 								label={
 									<div style={{ display: "flex", alignItems: "center" }}>
 										<IconHome
-											style={pathname === "/user" ? { color: "blue" } : {}}
+											style={pathname === "/home" ? { color: "blue" } : {}}
 											size="1rem"
 											stroke={1.5}
 										/>
 										<Text
 											style={{
 												marginLeft: "0.5rem",
-												color: pathname === "/user" ? "blue" : "inherit",
+												color: pathname === "/home" ? "blue" : "inherit",
 											}}
 										>
 											ホーム
@@ -123,7 +123,7 @@ export default function RootLayout({ children, session }: Props) {
 									</div>
 								}
 								component={Link}
-								href="/"
+								href="/home"
 							/>
 							<NavLink
 								label={
