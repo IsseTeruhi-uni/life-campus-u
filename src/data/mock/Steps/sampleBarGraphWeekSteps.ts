@@ -1,4 +1,4 @@
-const sampleBarGraphWeekSleepTime = {
+const sampleBarGraphWeekSteps = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     datasets: [
         {
@@ -11,4 +11,4 @@ const sampleBarGraphWeekSleepTime = {
     ],
 };
 
-export default sampleBarGraphWeekSleepTime;
+export default sampleBarGraphWeekSteps;

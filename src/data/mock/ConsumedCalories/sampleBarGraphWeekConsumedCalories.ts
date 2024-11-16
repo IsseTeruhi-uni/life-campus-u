@@ -1,12 +1,12 @@
 
-const sampleBarGraphWeekSleepScore = {
+const sampleBarGraphWeekConsumedCalories = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 
     datasets: [
         {
-            label: 'Sleep Score (points)',
+            label: 'Consumed Calories (kcal)',
             data: [
-                1.2, 3.4, 2.1, 4.0, 1.5, 3.6, 2.7
+                2000, 1800, 2200, 1900, 2100, 2000, 1800
             ],
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
@@ -15,4 +15,4 @@ const sampleBarGraphWeekSleepScore = {
     ],
 };
 
-export default sampleBarGraphWeekSleepScore;
+export default sampleBarGraphWeekConsumedCalories;

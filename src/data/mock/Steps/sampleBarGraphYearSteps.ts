@@ -1,4 +1,4 @@
-const sampleBarGraphYearSleepTime = {
+const sampleBarGraphYearSteps = {
     labels: ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'],
     datasets: [
         {
@@ -11,4 +11,4 @@ const sampleBarGraphYearSleepTime = {
     ],
 };
 
-export default sampleBarGraphYearSleepTime;
+export default sampleBarGraphYearSteps;

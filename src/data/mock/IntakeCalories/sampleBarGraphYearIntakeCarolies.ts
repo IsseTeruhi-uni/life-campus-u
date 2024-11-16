@@ -1,5 +1,5 @@
 
-const sampleBarGraphWeekSleepTime = {
+const sampleBarGraphWeekIntakeCalories = {
     labels: ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'],
     datasets: [
         {
@@ -14,4 +14,4 @@ const sampleBarGraphWeekSleepTime = {
     ],
 };
 
-export default sampleBarGraphWeekSleepTime;
+export default sampleBarGraphWeekIntakeCalories;

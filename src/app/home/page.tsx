@@ -8,13 +8,13 @@ import { samplePieGraphSleepTimetData } from "@/data/mock/SleepTime/samplePieGra
 import Bargraph from "@/components/BarGraph";
 import { sampleBargraphSleepStageData } from "@/data/mock/SleepStage/sampleBarGraphSleepStage";
 import RadarGraph from "@/components/RadarGraph";
-import sampleRadarGraphSleepScore from "@/data/mock/sampleRadarGraphSleepScore";
+import sampleRadarGraphSleepScore from "@/data/mock/SleepScore/sampleRadarGraphSleepScore";
 import SemiCircleGraph from "@/components/SemiCircleGraph";
-import { sampleSemiCircleGraphStepsData } from "@/data/mock/Steps/sampleSemiCricleGraphSteps";
-import { sampleSemiCircleGraphConsumedCaloriesData } from "@/data/mock/sampleSemiCricleGraphConsumedCalories";
-import { sampleRadarGraphNutrientsData } from "@/data/mock/sampleRadarGraphNutrients";
+import { sampleSemiCircleGraphSteps } from "@/data/mock/Steps/sampleSemiCricleGraphSteps";
+import { sampleSemiCircleGraphConsumedCaloriesData } from "@/data/mock/ConsumedCalories/sampleSemiCricleGraphConsumedCalories";
+import { sampleRadarGraphNutrientsData } from "@/data/mock/NutrientScore/sampleRadarGraphNutrients";
 import AdvicePersonWithMessage from "@/components/AdvicePersonWithMessage";
-import { sampleSemiCircleGraphIntakeCaloriesData } from "@/data/mock/sampleSemiCricleGraphIntakedCalories";
+import { sampleSemiCircleGraphIntakeCaloriesData } from "@/data/mock/IntakeCalories/sampleSemiCricleGraphIntakedCalories";
 import { useRouter } from "next/navigation";
 
 export default function Home(props: PaperProps) {
@@ -112,7 +112,7 @@ export default function Home(props: PaperProps) {
 					</Carousel.Slide>
 					<Carousel.Slide>
 						<Card shadow="sm" padding="lg" style={{ width: "98%", height: 290, display: "flex", justifyContent: "center", alignItems: "center" }}>
-							<SemiCircleGraph graphData={sampleSemiCircleGraphStepsData} title={"1日の歩数(デモ)"} className={""} achievedValue={8000} targetValue={10000}></SemiCircleGraph>
+							<SemiCircleGraph graphData={sampleSemiCircleGraphSteps} title={"1日の歩数(デモ)"} className={""} achievedValue={8000} targetValue={10000}></SemiCircleGraph>
 						</Card>
 					</Carousel.Slide>
 
