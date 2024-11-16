@@ -12,11 +12,11 @@ import {
 	Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import {IconHome } from "@tabler/icons-react";
+import { IconHome } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useUserSession } from '../hooks/use-user-session';
+import { useUserSession } from "../hooks/use-user-session";
 interface Props {
 	children: ReactNode;
 	session: string | null;
@@ -42,9 +42,27 @@ export default function RootLayout({ children, session }: Props) {
 						}}
 					>
 						<AppShell.Header>
-							<Group h="100%" px="md" style={{ display: 'flex', width: '100%' }}>
-								<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-									<div style={{ display: 'flex', alignItems: 'center', justifyContent:'flex-start', flex:1}}>
+							<Group
+								h="100%"
+								px="md"
+								style={{ display: "flex", width: "100%" }}
+							>
+								<div
+									style={{
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "space-between",
+										width: "100%",
+									}}
+								>
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "flex-start",
+											flex: 1,
+										}}
+									>
 										<Burger
 											opened={opened}
 											onClick={toggle}
@@ -52,9 +70,15 @@ export default function RootLayout({ children, session }: Props) {
 											size="sm"
 										/>
 									</div>
-									<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "center",
+										}}
+									>
 										<Text
-											style={{ marginLeft: "0.5rem",color: "black" }}
+											style={{ marginLeft: "0.5rem", color: "black" }}
 											fz="xl"
 											fw={700}
 											component={Link}
@@ -63,12 +87,18 @@ export default function RootLayout({ children, session }: Props) {
 											LifeCampusU
 										</Text>
 									</div>
-									<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' ,flex:1}}>
+									<div
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "flex-end",
+											flex: 1,
+										}}
+									>
 										{isAuthenticated && (
 											<Avatar radius="xl" component={Link} href="/user" />
 										)}
 									</div>
-
 								</div>
 							</Group>
 						</AppShell.Header>
@@ -144,9 +174,7 @@ export default function RootLayout({ children, session }: Props) {
 							/> */}
 						</AppShell.Navbar>
 
-
 						<AppShell.Main>{children}</AppShell.Main>
-
 					</AppShell>
 				</MantineProvider>
 			</body>
