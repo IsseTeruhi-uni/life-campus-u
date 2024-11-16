@@ -34,7 +34,7 @@ export default function Home(props: PaperProps) {
 				}}
 			>
 				<PageHeader title="AIアシスタント" />
-				<AdvicePersonWithMessage message="message" />
+				<AdvicePersonWithMessage message="摂取カロリーに比べて消費カロリーが少ないです。もう少し運動しましょう!!" />
 			</Paper>
 			<Paper
 				radius="md"
