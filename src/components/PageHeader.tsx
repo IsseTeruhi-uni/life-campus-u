@@ -13,9 +13,12 @@ import {
 	rem,
 	useMantineTheme,
 } from "@mantine/core";
-import { useColorScheme } from "@mantine/hooks";
 import { IconPlus, IconRefresh } from "@tabler/icons-react";
+
+import { useColorScheme } from "@mantine/hooks";
+
 import Surface from "./Surface";
+import FilterDateMenu from "./FilterDateMenu";
 
 type PageHeaderProps = {
 	title: string;
@@ -23,6 +26,7 @@ type PageHeaderProps = {
 	withActions?: boolean;
 	breadcrumbItems?: React.ReactNode;
 	invoiceAction?: boolean;
+	onDateChange?: (date: string) => void;
 } & PaperProps;
 
 const PageHeader = (props: PageHeaderProps) => {
@@ -32,6 +36,7 @@ const PageHeader = (props: PageHeaderProps) => {
 		title,
 		subtitle,
 		invoiceAction,
+		onDateChange,
 		...others
 	} = props;
 	const theme = useMantineTheme();
@@ -71,13 +76,14 @@ const PageHeader = (props: PageHeaderProps) => {
 						gap={{ base: "sm", sm: 4 }}
 					>
 						<Stack gap={4}>
-							<Title order={4}>{title}</Title>
+							<Title order={3}>{title}</Title>
 							<Text>{subtitle}</Text>
 						</Stack>
 						<Flex align="center" gap="sm">
 							<ActionIcon variant="subtle">
 								<IconRefresh size={16} />
 							</ActionIcon>
+							<FilterDateMenu onDateChange={onDateChange!} />
 						</Flex>
 					</Flex>
 				) : invoiceAction ? (
@@ -88,7 +94,7 @@ const PageHeader = (props: PageHeaderProps) => {
 						gap={{ base: "sm", sm: 4 }}
 					>
 						<Stack>
-							<Title order={4}>{title}</Title>
+							<Title order={3}>{title}</Title>
 							<Breadcrumbs {...BREADCRUMBS_PROPS}>
 								{breadcrumbItems}
 							</Breadcrumbs>
@@ -97,7 +103,7 @@ const PageHeader = (props: PageHeaderProps) => {
 					</Flex>
 				) : (
 					<Stack gap="sm">
-						<Title order={4}>{title}</Title>
+						<Title order={3}>{title}</Title>
 						<Breadcrumbs {...BREADCRUMBS_PROPS}>{breadcrumbItems}</Breadcrumbs>
 					</Stack>
 				)}

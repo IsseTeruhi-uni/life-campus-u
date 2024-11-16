@@ -33,7 +33,7 @@ const AdvicePersonWithMessage: React.FC<AdvicePersonWithMessageProps> = ({ messa
                 }}
             >
                 {/* 吹き出し内のメッセージ */}
-                <Text size="sm">{"摂取カロリーに比べて消費カロリーが少ないです。もう少し運動しましょう!!"}</Text>
+                <Text size="sm">{message}</Text>
 
                 {/* 吹き出しの三角形 */}
                 <Box
